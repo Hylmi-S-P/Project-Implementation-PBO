@@ -12,7 +12,7 @@
     <div
       class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 w-full max-w-2xl"
     >
-      <form action="process.php" method="POST" class="space-y-4">
+      <form action="" method="POST" class="space-y-4">
         <div>
           <input
             type="text"
@@ -62,6 +62,19 @@
           </button>
         </div>
       </form>
+      <?php
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          echo '<div class="mt-10 pt-6 border-t border-gray-200">'; 
+          
+          include 'process.php';
+
+          echo '<div class="mt-4">';
+          echo '<a href="index.php" class="text-sm text-gray-800 hover:text-black hover:underline cursor-pointer">Reset</a>';
+          echo '</div>';
+          
+          echo '</div>';
+      }
+      ?>
     </div>
   </body>
 </html>
